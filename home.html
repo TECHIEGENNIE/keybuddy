@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <section class="background">
+        <div class="d-flex justify-content-center logo  ">
+            <img src="img/logo.png" alt="logo">
+        </div>
+
+        <div class="position-absolute w-100 h-100">
+            <div class="animated-circle  circle-1"></div>
+            <div class="animated-circle animated-circle2  circle-3"></div>
+            <!-- <div class="animated-circle circle-2"></div> -->
+            <div class="animated-circle circle-outside"></div> 
+            <div class="animated-circle amoeba-circle circle-2"></div>
+        </div>
+        
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner text-center py-5">
+                <div class="carousel-item active">
+                    <img src="img/slide1.png" alt="Illustration 1" class="img-fluid" style="max-width: 450px;">
+                    <h2 class="mt-3 fw-bold">Welcome aboard!</h2>
+                    <p>We're excited to help you improve your typing skills.</p>
+                    <button href="dashboard.html"  class="btn btn1 px-4 py-2">Start Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/slide2.png" alt="Illustration 2" class="img-fluid" style="max-width: 290px;">
+                    <h2 class="mt-3 fw-bold">Track Your Progress</h2>
+                    <p>Stay motivated by tracking your typing speed and accuracy</p>
+                    <button href="dashboard.html"  class="btn btn1 px-4 py-2">Start Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/slide3.png" alt="Illustration 3" class="img-fluid" style="max-width: 250px;">
+                    <h2 class="mt-3 fw-bold">Set Your Typing Goals!</h2>
+                    <p>Set personalised typing goals and challenge yourself to reach new milestones</p>
+                    <button href="dashboard.html"  class="btn btn1 px-4 py-2">Start Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/slide4.png" alt="Illustration 4" class="img-fluid" style="max-width: 300px;">
+                    <h2 class="mt-3 fw-bold">Let's Get Typing </h2>
+                    <p>You're all set to start typing and boost your skills</p>
+                    <button href="dashboard.html"  class="btn btn1 px-4 py-2">Start Now</button>
+                </div>
+            </div>
+            <div class="progress-bar-container" id="progressContainer"></div>
+        </div>
+        
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="keybuddy.js">
+    </script>
+</body>
+</html>

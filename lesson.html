@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+    <style>
+        body {
+            background-color: #FDF7ED;
+        }
+        .sidebar {
+            width: 250px;
+            background: #FEB176;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            color: white;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin: 28px 0;
+        }
+        .sidebar i {
+            margin-right: 10px;
+            color: #FF6600;
+            font-size: 1.5rem;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 30px;
+        }
+        .top-icons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .top-icons i {
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 15px;
+            color: black;
+        }
+        .lesson-container {
+            background: #E8ECFF;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .lesson-image img {
+            width: 250px;
+        }
+        .lesson-text {
+            max-width: 500px;
+        }
+        .lesson-text h2 {
+            font-weight: bold;
+        }
+        .lesson-text p {
+            font-size: 16px;
+        }
+        .start-btn {
+            background: #FF6600;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .table-container {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .table thead {
+            background-color: #3A66FF !important;
+            color: white;
+        }
+
+        .table tbody{
+            background-color: #E9EBF8;
+        }
+
+        thead {
+    background-color: #ff9800 !important;
+    color: white !important;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="img/logo.png" alt="">
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i> Typing Lesson</a>
+        <a href="#"><i class="fas fa-keyboard"></i> Typing Test</a>
+        <a href="#"><i class="fas fa-trophy"></i> Challenge</a>
+        <a href="#"><i class="fas fa-gamepad"></i> Games</a>
+        <a href="#"><i class="fas fa-list"></i> Leader Board</a>
+        <a href="#"><i class="fas fa-certificate"></i> Certificate</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="top-icons">
+            <i class="fas fa-tint"></i>
+            <i class="fas fa-volume-up"></i>
+        </div>
+
+        <h2>Lesson</h2>
+        <div class="lesson-container">
+            <div class="lesson-image w-auto">
+                <img src="img/stud-teacher.png" alt="logo" class="img-fluid" style="width: 400px;">
+            </div>
+            <div class="lesson-text">
+                <h2>Lesson 1: The Home Row Keys</h2>
+                <p>Welcome to your first typing lesson! In this lesson, you’ll focus on the Home Row Keys—the foundation of efficient typing.</p>
+                <p><strong>Place your fingers on the middle row of keys:</strong></p>
+                <ul>
+                    <li>Left hand: A, S, D, F</li>
+                    <li>Right hand: J, K, L, ;</li>
+                </ul>
+                <button class="start-btn">Start</button>
+            </div>
+        </div>
+
+        <div class="table-container mt-4">
+            <table class="table">
+                <thead >
+                    <tr>
+                        <th>Lesson</th>
+                        <th>Tasks</th>
+                        <th>Words</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lesson 3</strong></td>
+                        <td>Accuracy</td>
+                        <td>Speed</td>
+                        <td>Duration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lesson 4</strong></td>
+                        <td>Accuracy</td>
+                        <td>Speed</td>
+                        <td>Duration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lesson 5</strong></td>
+                        <td>Accuracy</td>
+                        <td>Speed</td>
+                        <td>Duration</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+</body>
+</html>

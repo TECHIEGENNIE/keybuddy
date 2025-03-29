@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Lesson</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background: #333;
+            height: 100vh;
+            position: fixed;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 5px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .key {
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .key.correct {
+            background: green;
+            color: white;
+        }
+        .key.wrong {
+            background: red;
+            color: white;
+        }
+        .progress-bar-container {
+            width: 100%;
+            height: 10px;
+            background: #ccc;
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: orange;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3 class="text-center">Menu</h3>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-book"></i> Lessons</a>
+        <a href="#"><i class="fas fa-chart-line"></i> Progress</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+
+    <div class="content">
+        <div class="timer">Time Left: <span id="time">60</span> sec</div>
+
+        <h2 class="text-center">Typing Lesson</h2>
+
+        <div class="lesson-section text-center">
+            <h4>Single Letter Typing</h4>
+            <p>Type the letter shown below:</p>
+            <h1 id="letter" class="fw-bold">A</h1>
+        </div>
+
+        <div class="lesson-section text-center">
+            <h4>Three-Letter Typing</h4>
+            <p>Type the letters below:</p>
+            <h1 id="three-letters" class="fw-bold">CAT</h1>
+        </div>
+
+        <div class="lesson-section text-center">
+            <h4>Five-Letter Typing</h4>
+            <p>Type the word below:</p>
+            <h1 id="five-letters" class="fw-bold">HAPPY</h1>
+        </div>
+
+        <div class="keyboard">
+            <div class="key">A</div>
+            <div class="key">B</div>
+            <div class="key">C</div>
+            <div class="key">D</div>
+            <div class="key">E</div>
+            <div class="key">F</div>
+            <div class="key">G</div>
+            <div class="key">H</div>
+            <div class="key">I</div>
+            <div class="key">J</div>
+            <div class="key">K</div>
+            <div class="key">L</div>
+            <div class="key">M</div>
+            <div class="key">N</div>
+            <div class="key">O</div>
+            <div class="key">P</div>
+            <div class="key">Q</div>
+            <div class="key">R</div>
+            <div class="key">S</div>
+            <div class="key">T</div>
+            <div class="key">U</div>
+            <div class="key">V</div>
+            <div class="key">W</div>
+            <div class="key">X</div>
+            <div class="key">Y</div>
+            <div class="key">Z</div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 60;
+        let progress = 0;
+        const timeDisplay = document.getElementById('time');
+        const progressBar = document.getElementById('progress');
+
+        function updateProgress() {
+            progress += 33.3;
+            if (progress > 100) progress = 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function startTimer() {
+            let timer = setInterval(() => {
+                timeLeft--;
+                timeDisplay.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    alert("Time is up!");
+                }
+            }, 1000);
+        }
+
+        document.addEventListener("keydown", function(event) {
+            let keyPressed = event.key.toUpperCase();
+            let keys = document.querySelectorAll(".key");
+
+            keys.forEach(key => {
+                key.classList.remove("correct", "wrong");
+                if (key.textContent === keyPressed) {
+                    if (keyPressed === "A" || keyPressed === "C" || keyPressed === "H") {
+                        key.classList.add("correct");
+                        updateProgress();
+                    } else {
+                        key.classList.add("wrong");
+                    }
+                }
+            });
+        });
+
+        startTimer();
+    </script>
+
+</body>
+</html>

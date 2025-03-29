@@ -1,0 +1,216 @@
+.background {
+    background: linear-gradient(135deg, #FFBD8A, #fff1e6);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn1{
+    background-color: #FF6F00;
+    color: white;
+    margin-bottom: 15px;
+}
+.btn1:hover{
+    background-color: #FFC107;
+    color: white;
+    
+}
+
+
+
+.animated-circle {
+position: absolute;
+width: 200px;
+height: 200px;
+background-color: #FFBD8A;
+border-radius: 50%;
+border: 4px dotted #fff1e6;
+opacity: 0.7;
+z-index: 2; /* Keeps circles behind content */
+animation: moveInside 12s infinite alternate ease-in-out;
+}
+
+.animated-circle2{
+width: 100px;
+height: 100px;
+border: none;
+}
+
+/* Regular movement within the viewport */
+.circle-1 { top: 10%; left: 5%; animation-duration: 10s; }
+.circle-2 { top: 50%; left: 80%; animation-duration: 14s; }
+.circle-3 { top: 70%; left: 20%; animation-duration: 12s; }
+
+/* This ball moves outside the viewport */
+.circle-outside {
+top: 30%;
+right: -30px; /* Starts near the edge */
+animation: moveOutside 16s infinite alternate ease-in-out;
+}
+
+/* Keyframes for normal circles */
+@keyframes moveInside {
+0% { transform: translate(0, 0); }
+25% { transform: translate(40px, -40px); opacity: 0.5; }
+50% { transform: translate(-30px, 50px); }
+75% { transform: translate(60px, -30px); }
+100% { transform: translate(-20px, 40px); }
+}
+
+/* Keyframes for the ball that moves outside */
+@keyframes moveOutside {
+0% { transform: translate(0, 0); }
+50% { transform: translate(-50px, 30px); } /* Moves towards edge */
+100% { transform: translate(50vw, -30px); opacity: 0; } /* Moves out */
+}
+
+.spiral {
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    top: 30%;
+    left: 70%;
+    background: url('img/spiral.png') no-repeat center;
+    background-size: contain;
+    animation: rotateSpiral 5s infinite linear;
+}
+
+@keyframes rotateSpiral {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+
+.progress-bar-container {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.progress-segment {
+    width: 70px;
+    height: 6px;
+    background-color: rgb(223, 218, 218);
+    /* border-radius: 50%; */
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+.progress-segment.active {
+    background-color: orange;
+}
+
+
+.logo{
+    padding-top: 17px;
+}
+
+.amoeba-circle {
+width: 150px; 
+height: 150px;
+background-color: #FFBD8A; /* Orange shade */
+position: absolute;
+border-radius: 50%;
+animation: wobble 4s infinite ease-in-out;
+}   
+
+/* Amoeba Movement */
+@keyframes wobble {
+0% { border-radius: 50% 50% 50% 50%; transform: translate(0, 0) scale(1); }
+25% { border-radius: 60% 40% 50% 50%; transform: translate(20px, -10px) scale(1.1); }
+50% { border-radius: 50% 60% 40% 50%; transform: translate(-10px, 20px) scale(0.9); }
+75% { border-radius: 40% 50% 60% 50%; transform: translate(10px, -20px) scale(1.05); }
+100% { border-radius: 50% 50% 50% 50%; transform: translate(0, 0) scale(1); }
+}
+
+
+
+.dashboard{
+    background: linear-gradient(135deg, #FFBD8A, #fff1e6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    width: 250px;
+    background: #f88d42;
+    padding: 20px;
+    color: white;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.back-button {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.lesson-container {
+    display: flex;
+    align-items: center;
+    background: #e3e6ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.lesson-text {
+    flex: 1;
+}
+
+.start-btn {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lesson-image img {
+    width: 250px;
+}
+
+/* Table */
+.lesson-table {
+    margin-top: 20px;
+}
+
+.table {
+    background: #ffffff;
+    border-radius: 10px;
+}
